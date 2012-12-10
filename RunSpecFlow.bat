@@ -1,4 +1,4 @@
-"packages\NUnit 2.6.2\bin\nunit-console.exe" /labels /out=TestResult.txt /xml=TestResult.xml /framework=net-4.0 ImbizoCalculator.Specs\bin\Debug\ImbizoCalculator.Specs.dll
+"C:\Program Files (x86)\NUnit 2.6.2\bin\nunit-console.exe" /labels /out=TestResult.txt /xml=TestResult.xml /framework=net-4.0 ImbizoCalculator.Specs\bin\Debug\ImbizoCalculator.Specs.dll
  
 "packages\SpecFlow.1.9.0\tools\specflow.exe" nunitexecutionreport ImbizoCalculator.Specs\ImbizoCalculator.Specs.csproj
  
