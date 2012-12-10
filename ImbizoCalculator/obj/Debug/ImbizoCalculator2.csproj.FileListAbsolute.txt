@@ -1,6 +1,0 @@
-C:\Users\Rowan\documents\visual studio 2010\Projects\ImbizoCalculator\ImbizoCalculator2\bin\Debug\ImbizoCalculator2.pdb
-C:\Users\Rowan\documents\visual studio 2010\Projects\ImbizoCalculator\ImbizoCalculator2\obj\Debug\ImbizoCalculator2.pdb
-C:\Users\Rowan\documents\visual studio 2010\Projects\ImbizoCalculator\ImbizoCalculator2\obj\Debug\ImbizoCalculator2.Form1.resources
-C:\Users\Rowan\documents\visual studio 2010\Projects\ImbizoCalculator\ImbizoCalculator2\obj\Debug\ImbizoCalculator2.csproj.GenerateResource.Cache
-C:\Users\Rowan\documents\visual studio 2010\Projects\ImbizoCalculator\ImbizoCalculator2\bin\Debug\ImbizoCalculator2.exe
-C:\Users\Rowan\documents\visual studio 2010\Projects\ImbizoCalculator\ImbizoCalculator2\obj\Debug\ImbizoCalculator2.exe
