@@ -1,0 +1,12 @@
+C:\Users\Rowan\documents\visual studio 2010\Projects\ImbizoCalculator\ImbizoCalculator2\bin\Debug\ImbizoCalculator.exe
+C:\Users\Rowan\documents\visual studio 2010\Projects\ImbizoCalculator\ImbizoCalculator2\bin\Debug\ImbizoCalculator.pdb
+C:\Users\Rowan\documents\visual studio 2010\Projects\ImbizoCalculator\ImbizoCalculator2\obj\Debug\ImbizoCalculator.Calculator.resources
+C:\Users\Rowan\documents\visual studio 2010\Projects\ImbizoCalculator\ImbizoCalculator2\obj\Debug\ImbizoCalculator.csproj.GenerateResource.Cache
+C:\Users\Rowan\documents\visual studio 2010\Projects\ImbizoCalculator\ImbizoCalculator2\obj\Debug\ImbizoCalculator.exe
+C:\Users\Rowan\documents\visual studio 2010\Projects\ImbizoCalculator\ImbizoCalculator2\obj\Debug\ImbizoCalculator.pdb
+C:\Users\Rowan\Documents\Visual Studio 2010\Projects\ImbizoCalculator\ImbizoCalculator\bin\Debug\ImbizoCalculator.exe
+C:\Users\Rowan\Documents\Visual Studio 2010\Projects\ImbizoCalculator\ImbizoCalculator\bin\Debug\ImbizoCalculator.pdb
+C:\Users\Rowan\Documents\Visual Studio 2010\Projects\ImbizoCalculator\ImbizoCalculator\obj\Debug\ImbizoCalculator.Calculator.resources
+C:\Users\Rowan\Documents\Visual Studio 2010\Projects\ImbizoCalculator\ImbizoCalculator\obj\Debug\ImbizoCalculator.csproj.GenerateResource.Cache
+C:\Users\Rowan\Documents\Visual Studio 2010\Projects\ImbizoCalculator\ImbizoCalculator\obj\Debug\ImbizoCalculator.exe
+C:\Users\Rowan\Documents\Visual Studio 2010\Projects\ImbizoCalculator\ImbizoCalculator\obj\Debug\ImbizoCalculator.pdb
