@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Threading;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 using White.Core;
 using White.Core.Factory;
@@ -22,34 +23,49 @@ namespace ImbizoCalculator.Specs.Steps
         [Given(@"I have started the calculator")]
         public void GivenIHaveStartedTheCalculator()
         {
-            Application application = Application.Launch("ImbizoCalculator.exe");
+            var application = Application.Launch("ImbizoCalculator.exe");
             _calculatorWindow = application.GetWindow("Calculator", InitializeOption.NoCache);
         }
 
         [When(@"I press (.*)")]
-        public void WhenIPress(string digits)
+        public void WhenIPress(string buttons)
         {
-            foreach (char digit in digits)
-            {
-                var button = _calculatorWindow.Get<Button>(SearchCriteria.ByText(digit.ToString()));
-                button.Click();
-            }
+            ClickButtons(buttons);
         }
 
         [When(@"I add (.*) and (.*)")]
         public void WhenIAddAnd(string first, string second)
         {
-            WhenIPress(first);
-            WhenIPress("+");
-            WhenIPress(second);
-            WhenIPress("=");
+            ClickButtons(first);
+            ClickButtons("+");
+            ClickButtons(second);
+            ClickButtons("=");
         }
-        
+
         [Then(@"the result should be (.*) on the screen")]
         public void ThenTheResultShouldBeOnTheScreen(string number)
         {
+            Assert.AreEqual(number, NumberOnScreen());
+        }
+
+        private string NumberOnScreen()
+        {
             var calculatorScreen = _calculatorWindow.Get<TextBox>("calculatorScreen");
-            Assert.AreEqual(number, calculatorScreen.Text);
+            return calculatorScreen.Text;
+        }
+
+        private void ClickButtons(string digits)
+        {
+            foreach (char digit in digits)
+            {
+                ClickButton(digit);
+            }
+        }
+
+        private void ClickButton(char digit)
+        {
+            var button = _calculatorWindow.Get<Button>(SearchCriteria.ByText(digit.ToString()));
+            button.Click();
         }
     }
 }
