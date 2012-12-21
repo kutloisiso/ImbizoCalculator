@@ -19,20 +19,21 @@ namespace ImbizoCalculator.Specs.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("EnteringNumbers")]
-    public partial class EnteringNumbersFeature
+    [NUnit.Framework.DescriptionAttribute("Multiplication")]
+    public partial class MultiplicationFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "EnteringNumbers.feature"
+#line 1 "Multiplication.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "EnteringNumbers", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Multiplication", "As a grocery shopper\r\nI want to know what a certain quantity of an item will cost" +
+                    "\r\nSo that I don\'t have to repeatedly add the same amount", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -65,37 +66,18 @@ namespace ImbizoCalculator.Specs.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Calculator just started")]
-        public virtual void CalculatorJustStarted()
+        [NUnit.Framework.DescriptionAttribute("Multiply two numbers")]
+        public virtual void MultiplyTwoNumbers()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calculator just started", ((string[])(null)));
-#line 3
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multiply two numbers", ((string[])(null)));
+#line 6
 this.ScenarioSetup(scenarioInfo);
-#line 4
- testRunner.Given("I have started the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 5
- testRunner.Then("the result should be 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Enter digits")]
-        [NUnit.Framework.TestCaseAttribute("1", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("12", "12", null)]
-        [NUnit.Framework.TestCaseAttribute("1234567890", "1234567890", null)]
-        [NUnit.Framework.TestCaseAttribute("123.456", "123.456", null)]
-        public virtual void EnterDigits(string digits, string result, string[] exampleTags)
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Enter digits", exampleTags);
 #line 7
-this.ScenarioSetup(scenarioInfo);
-#line 8
  testRunner.Given("I have started the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 8
+ testRunner.When("I multiply 4.99 by 6", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.When(string.Format("I press {0}", digits), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 10
- testRunner.Then(string.Format("the result should be {0}", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the result should be 29.94", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

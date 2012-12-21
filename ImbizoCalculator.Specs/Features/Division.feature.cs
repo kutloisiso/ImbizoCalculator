@@ -19,20 +19,21 @@ namespace ImbizoCalculator.Specs.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("EnteringNumbers")]
-    public partial class EnteringNumbersFeature
+    [NUnit.Framework.DescriptionAttribute("Division")]
+    public partial class DivisionFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "EnteringNumbers.feature"
+#line 1 "Division.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "EnteringNumbers", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Division", "As a grocery shopper\r\nI want to know what a single item sold in a pack of items c" +
+                    "osts\r\nSo that I can compare the unit price of different brands", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -65,37 +66,18 @@ namespace ImbizoCalculator.Specs.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Calculator just started")]
-        public virtual void CalculatorJustStarted()
+        [NUnit.Framework.DescriptionAttribute("Divide one number by another")]
+        public virtual void DivideOneNumberByAnother()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calculator just started", ((string[])(null)));
-#line 3
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Divide one number by another", ((string[])(null)));
+#line 6
 this.ScenarioSetup(scenarioInfo);
-#line 4
- testRunner.Given("I have started the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 5
- testRunner.Then("the result should be 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Enter digits")]
-        [NUnit.Framework.TestCaseAttribute("1", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("12", "12", null)]
-        [NUnit.Framework.TestCaseAttribute("1234567890", "1234567890", null)]
-        [NUnit.Framework.TestCaseAttribute("123.456", "123.456", null)]
-        public virtual void EnterDigits(string digits, string result, string[] exampleTags)
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Enter digits", exampleTags);
 #line 7
-this.ScenarioSetup(scenarioInfo);
-#line 8
  testRunner.Given("I have started the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 8
+ testRunner.When("I divide 29.94 by 6", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.When(string.Format("I press {0}", digits), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 10
- testRunner.Then(string.Format("the result should be {0}", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the result should be 4.99", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

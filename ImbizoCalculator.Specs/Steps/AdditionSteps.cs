@@ -1,6 +1,6 @@
-﻿using System.Threading;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist;
 using White.Core;
 using White.Core.Factory;
 using White.Core.UIItems;
@@ -27,25 +27,107 @@ namespace ImbizoCalculator.Specs.Steps
             _calculatorWindow = application.GetWindow("Calculator", InitializeOption.NoCache);
         }
 
+        [Given(@"I have already performed a calculation")]
+        public void GivenIHaveAlreadyPerformedACalculation()
+        {
+            GivenIHaveStartedTheCalculator();
+            PressButtons("1+1=");
+        }
+
         [When(@"I press (.*)")]
         public void WhenIPress(string buttons)
         {
-            ClickButtons(buttons);
+            PressButtons(buttons);
         }
 
-        [When(@"I add (.*) and (.*)")]
-        public void WhenIAddAnd(string first, string second)
+        [When(@"I add the following amounts")]
+        public void WhenIAddTheFollowingAmounts(Table table)
         {
-            ClickButtons(first);
-            ClickButtons("+");
-            ClickButtons(second);
-            ClickButtons("=");
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                var row = table.Rows[i];
+                string amount = row.GetString("amount");
+
+                if (i > 0)
+                {
+                    Add(amount);
+                }
+                else
+                {
+                    PressButtons(amount);                    
+                }
+            }
+
+            PressEquals();
         }
 
-        [Then(@"the result should be (.*) on the screen")]
+        [When(@"I continue to add the following amounts")]
+        public void WhenIContinueToAddTheFollowingAmounts(Table table)
+        {
+            foreach (var row in table.Rows)
+            {
+                Add(row.GetString("amount"));
+            }
+
+            PressEquals();
+        }
+
+        [When(@"I subtract (.*)")]
+        public void WhenISubtract(string amount)
+        {
+            Subtract(amount);
+            PressEquals();
+        }
+
+        [When(@"I multiply (.*) by (.*)")]
+        public void WhenIMultiplyBy(string first, string second)
+        {
+            PressButtons(first);
+            MultiplyBy(second);
+            PressEquals();
+        }
+
+        [When(@"I divide (.*) by (.*)")]
+        public void WhenIDivideBy(string first, string second)
+        {
+            PressButtons(first);
+            DivideBy(second);
+            PressEquals();
+        }
+
+        [Then(@"the result should be (.*)")]
         public void ThenTheResultShouldBeOnTheScreen(string number)
         {
             Assert.AreEqual(number, NumberOnScreen());
+        }
+
+        private void Add(string amount)
+        {
+            PressButtons("+");
+            PressButtons(amount);
+        }
+
+        private void Subtract(string amount)
+        {
+            PressButtons("-");
+            PressButtons(amount);
+        }
+
+        private void MultiplyBy(string amount)
+        {
+            PressButtons("*");
+            PressButtons(amount);
+        }
+
+        private void DivideBy(string amount)
+        {
+            PressButtons("/");
+            PressButtons(amount);
+        }
+
+        private void PressEquals()
+        {
+            PressButtons("=");
         }
 
         private string NumberOnScreen()
@@ -54,17 +136,17 @@ namespace ImbizoCalculator.Specs.Steps
             return calculatorScreen.Text;
         }
 
-        private void ClickButtons(string digits)
+        private void PressButtons(string buttons)
         {
-            foreach (char digit in digits)
+            foreach (char button in buttons)
             {
-                ClickButton(digit);
+                PressButton(button);
             }
         }
 
-        private void ClickButton(char digit)
+        private void PressButton(char buttonText)
         {
-            var button = _calculatorWindow.Get<Button>(SearchCriteria.ByText(digit.ToString()));
+            var button = _calculatorWindow.Get<Button>(SearchCriteria.ByText(buttonText.ToString()));
             button.Click();
         }
     }

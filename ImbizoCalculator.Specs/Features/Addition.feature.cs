@@ -32,7 +32,8 @@ namespace ImbizoCalculator.Specs.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Addition", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Addition", "As a grocery shopper\r\nI want to know the sum of my purchases\r\nSo that I don\'t blo" +
+                    "w my budget", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -65,20 +66,86 @@ namespace ImbizoCalculator.Specs.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add two numbers")]
-        [NUnit.Framework.TestCaseAttribute("50", "70", "120", null)]
-        [NUnit.Framework.TestCaseAttribute("10", "10", "20", null)]
-        public virtual void AddTwoNumbers(string first, string second, string result, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Add decimal numbers")]
+        public virtual void AddDecimalNumbers()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", exampleTags);
-#line 3
-this.ScenarioSetup(scenarioInfo);
-#line 4
- testRunner.Given("I have started the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 5
- testRunner.When(string.Format("I add {0} and {1}", first, second), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add decimal numbers", ((string[])(null)));
 #line 6
- testRunner.Then(string.Format("the result should be {0} on the screen", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+this.ScenarioSetup(scenarioInfo);
+#line 7
+ testRunner.Given("I have started the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "amount"});
+            table1.AddRow(new string[] {
+                        "49.99"});
+            table1.AddRow(new string[] {
+                        "69.95"});
+            table1.AddRow(new string[] {
+                        "14.5"});
+#line 8
+ testRunner.When("I add the following amounts", ((string)(null)), table1, "When ");
+#line 13
+ testRunner.Then("the result should be 134.44", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Perform another calculation")]
+        public virtual void PerformAnotherCalculation()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Perform another calculation", ((string[])(null)));
+#line 15
+this.ScenarioSetup(scenarioInfo);
+#line 16
+ testRunner.Given("I have already performed a calculation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "amount"});
+            table2.AddRow(new string[] {
+                        "49.99"});
+            table2.AddRow(new string[] {
+                        "69.95"});
+            table2.AddRow(new string[] {
+                        "14.5"});
+#line 17
+ testRunner.When("I add the following amounts", ((string)(null)), table2, "When ");
+#line 22
+ testRunner.Then("the result should be 134.44", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Continue a calculation")]
+        public virtual void ContinueACalculation()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Continue a calculation", ((string[])(null)));
+#line 24
+this.ScenarioSetup(scenarioInfo);
+#line 25
+ testRunner.Given("I have started the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "amount"});
+            table3.AddRow(new string[] {
+                        "10"});
+            table3.AddRow(new string[] {
+                        "20"});
+#line 26
+ testRunner.When("I add the following amounts", ((string)(null)), table3, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "amount"});
+            table4.AddRow(new string[] {
+                        "30"});
+            table4.AddRow(new string[] {
+                        "40"});
+#line 30
+ testRunner.And("I continue to add the following amounts", ((string)(null)), table4, "And ");
+#line 34
+ testRunner.Then("the result should be 100", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
