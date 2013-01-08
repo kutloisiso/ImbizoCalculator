@@ -45,6 +45,8 @@
             this.multiplyButton = new System.Windows.Forms.Button();
             this.divideButton = new System.Windows.Forms.Button();
             this.subtractButton = new System.Windows.Forms.Button();
+            this.clearEntryButton = new System.Windows.Forms.Button();
+            this.clearAllButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // calculatorScreen
@@ -53,7 +55,7 @@
             this.calculatorScreen.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.calculatorScreen.Location = new System.Drawing.Point(12, 12);
             this.calculatorScreen.Name = "calculatorScreen";
-            this.calculatorScreen.Size = new System.Drawing.Size(424, 80);
+            this.calculatorScreen.Size = new System.Drawing.Size(510, 80);
             this.calculatorScreen.TabIndex = 0;
             this.calculatorScreen.Text = "0";
             // 
@@ -71,7 +73,7 @@
             // equalsButton
             // 
             this.equalsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.equalsButton.Location = new System.Drawing.Point(356, 105);
+            this.equalsButton.Location = new System.Drawing.Point(356, 275);
             this.equalsButton.Name = "equalsButton";
             this.equalsButton.Size = new System.Drawing.Size(80, 166);
             this.equalsButton.TabIndex = 2;
@@ -233,11 +235,35 @@
             this.subtractButton.UseVisualStyleBackColor = true;
             this.subtractButton.Click += new System.EventHandler(this.subtractButton_Click);
             // 
+            // clearEntryButton
+            // 
+            this.clearEntryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearEntryButton.Location = new System.Drawing.Point(356, 105);
+            this.clearEntryButton.Name = "clearEntryButton";
+            this.clearEntryButton.Size = new System.Drawing.Size(166, 80);
+            this.clearEntryButton.TabIndex = 17;
+            this.clearEntryButton.Text = "CE";
+            this.clearEntryButton.UseVisualStyleBackColor = true;
+            this.clearEntryButton.Click += new System.EventHandler(this.clearEntryButton_Click);
+            // 
+            // clearAllButton
+            // 
+            this.clearAllButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearAllButton.Location = new System.Drawing.Point(356, 191);
+            this.clearAllButton.Name = "clearAllButton";
+            this.clearAllButton.Size = new System.Drawing.Size(166, 80);
+            this.clearAllButton.TabIndex = 18;
+            this.clearAllButton.Text = "CA";
+            this.clearAllButton.UseVisualStyleBackColor = true;
+            this.clearAllButton.Click += new System.EventHandler(this.clearAllButton_Click);
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(449, 453);
+            this.ClientSize = new System.Drawing.Size(530, 453);
+            this.Controls.Add(this.clearAllButton);
+            this.Controls.Add(this.clearEntryButton);
             this.Controls.Add(this.subtractButton);
             this.Controls.Add(this.divideButton);
             this.Controls.Add(this.multiplyButton);
@@ -281,5 +307,7 @@
         private System.Windows.Forms.Button multiplyButton;
         private System.Windows.Forms.Button divideButton;
         private System.Windows.Forms.Button subtractButton;
+        private System.Windows.Forms.Button clearEntryButton;
+        private System.Windows.Forms.Button clearAllButton;
     }
 }

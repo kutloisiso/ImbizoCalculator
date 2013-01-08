@@ -21,13 +21,7 @@ namespace ImbizoCalculator
         public Calculator()
         {
             InitializeComponent();
-            calculatorScreen.Text = "0";
-            _clearScreenOnNextDigit = true;
-        }
-
-        private double NumberOnScreen
-        {
-            get { return double.Parse(calculatorScreen.Text); }
+            DisplayOnScreen(0);
         }
 
         private void equalsButton_Click(object sender, EventArgs e)
@@ -66,35 +60,62 @@ namespace ImbizoCalculator
             switch (_currentOperation)
             {
                 case CalculatorOperation.Nothing:
-                    _currentResult = NumberOnScreen;
+                    _currentResult = EnteredNumber();
                     break;
                 case CalculatorOperation.Add:
-                    _currentResult += NumberOnScreen;
+                    _currentResult += EnteredNumber();
                     break;
                 case CalculatorOperation.Subtract:
-                    _currentResult -= NumberOnScreen;
+                    _currentResult -= EnteredNumber();
                     break;
                 case CalculatorOperation.Multiply:
-                    _currentResult *= NumberOnScreen;
+                    _currentResult *= EnteredNumber();
                     break;
                 case CalculatorOperation.Divide:
-                    _currentResult /= NumberOnScreen;
+                    _currentResult /= EnteredNumber();
                     break;
             }
 
-            calculatorScreen.Text = _currentResult.ToString();
-            _clearScreenOnNextDigit = true;
+            DisplayOnScreen(_currentResult);
+        }
+
+        private double EnteredNumber()
+        {
+            return double.Parse(calculatorScreen.Text);
         }
 
         private void digitButton_Click(object sender, EventArgs e)
         {
             if (_clearScreenOnNextDigit)
             {
-                calculatorScreen.Text = string.Empty;
-                _clearScreenOnNextDigit = false;
+                ClearScreen();
             }
 
-            calculatorScreen.Text += ((Button) sender).Text;
+            string digit = ((Button) sender).Text;
+            calculatorScreen.Text += digit;
+        }
+
+        private void ClearScreen()
+        {
+            calculatorScreen.Text = string.Empty;
+            _clearScreenOnNextDigit = false;
+        }
+
+        private void clearEntryButton_Click(object sender, EventArgs e)
+        {
+            DisplayOnScreen(0);
+        }
+
+        private void clearAllButton_Click(object sender, EventArgs e)
+        {
+            _currentResult = 0;
+            DisplayOnScreen(0);
+        }
+
+        private void DisplayOnScreen(double value)
+        {
+            calculatorScreen.Text = value.ToString();
+            _clearScreenOnNextDigit = true;
         }
     }
 }

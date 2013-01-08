@@ -62,6 +62,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Addition.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Clear.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Clear.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\EnteringNumbers.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -83,13 +88,17 @@
       <DependentUpon>Subtraction.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Steps\AdditionSteps.cs" />
+    <Compile Include="Steps\CalculatorSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Features\Addition.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Addition.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Clear.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Clear.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\EnteringNumbers.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
