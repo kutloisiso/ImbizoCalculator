@@ -57,64 +57,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\Addition.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Addition.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\Clear.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Clear.feature</DependentUpon>
-    </Compile>
     <Compile Include="Features\EnteringNumbers.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EnteringNumbers.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\Multiplication.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Multiplication.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\Division.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Division.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\Subtraction.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Subtraction.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\CalculatorSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Features\Addition.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Addition.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\Clear.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Clear.feature.cs</LastGenOutput>
-    </None>
     <None Include="Features\EnteringNumbers.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EnteringNumbers.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\Multiplication.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Multiplication.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\Division.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Division.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\Subtraction.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Subtraction.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

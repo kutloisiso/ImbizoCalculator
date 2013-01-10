@@ -78,27 +78,6 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Enter digits")]
-        [NUnit.Framework.TestCaseAttribute("1", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("12", "12", null)]
-        [NUnit.Framework.TestCaseAttribute("1234567890", "1234567890", null)]
-        [NUnit.Framework.TestCaseAttribute("123.456", "123.456", null)]
-        public virtual void EnterDigits(string digits, string result, string[] exampleTags)
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Enter digits", exampleTags);
-#line 7
-this.ScenarioSetup(scenarioInfo);
-#line 8
- testRunner.Given("I have started the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 9
- testRunner.When(string.Format("I press {0}", digits), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 10
- testRunner.Then(string.Format("the result should be {0}", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
     }
 }
 #pragma warning restore
